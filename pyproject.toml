@@ -1,0 +1,25 @@
+
+[tool.poetry]
+name = "mytubefeed"
+version = "0.1.0"
+description = "A tool to create an HTML page of the latest YouTube videos from a list of channels."
+authors = ["Mikael Moutakis <mikaelmoutakis@gmail.com>"]
+packages = [{include = "youtube_rss"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.31.0"
+docopt = "^0.6.2"
+loguru = "^0.7.2"
+beautifulsoup4 = "^4.12.3"
+
+[poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+requests-mock = "^1.11.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+latest_videos = "youtube_rss.main:main"
